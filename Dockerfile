@@ -1,5 +1,7 @@
 FROM ghcr.io/falcondev-oss/actions-runner:latest
 
 RUN sudo apt-get update \
-  && sudo apt-get install -y --no-install-recommends libatomic1 zstd build-essential pkg-config libssl-dev just awscli gh \
+  && sudo apt-get install -y --no-install-recommends libatomic1 zstd build-essential pkg-config libssl-dev just gh \
   && sudo rm -rf /var/lib/apt/lists/*
+
+RUN sudo snap install aws-cli --classic
